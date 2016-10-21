@@ -1,4 +1,43 @@
 #!/usr/bin/env python
+"""
+Implementation of insertion sort on list in python
+
+Ex:   4 2 7 1  0 5 2 5 6
+
+1.     4    2          		  7 1  0 5 2 5 6
+         24                	  7 1  0 5 2 5 6
+2.       24      7              1  0 5 2 5 6
+3.          247                 1  0 5 2 5 6
+4.          247     1 			   0 5 2 5 6
+                2477
+                2447
+                2247
+                1247				0 5 2 5 6
+
+5. 				1247		0 		  5 2 5 6
+                
+                12477
+                12447
+                12247
+                11247
+                01247				  5 2 5 6
+
+6. 				01247        5			2 5 6
+				012477
+
+7.				012457		 2			  5 6
+				0124577
+				0124557
+				0124457
+
+8.				0122457		 6			    6
+				01224577
+				01224567					8
+
+9. 				01224567     8
+				012245678
+
+"""
 import time
 import functools
 
@@ -8,7 +47,7 @@ def count_time(func):
 		t1 = time.time()
 		res = func(*args, **kwargs)
 		t2 = time.time()
-		print ('Time run function %s = %.15f'%(func.func_name, t2-t1))
+		print ('Time run function %s = %.10g'%(func.func_name, t2-t1))
 		return res
 
 	return wrap
