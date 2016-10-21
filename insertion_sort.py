@@ -2,43 +2,35 @@
 """
 Implementation of insertion sort on list in python
 
-Ex:   4 2 7 1  0 5 2 5 6
+Ex:   4 2 7 1  0 5
 
-1.     4    2          		  7 1  0 5 2 5 6
-         24                	  7 1  0 5 2 5 6
-2.       24      7              1  0 5 2 5 6
-3.          247                 1  0 5 2 5 6
-4.          247     1 			   0 5 2 5 6
+1.     4    2          		  7 1  0 5 
+         24                	  7 1  0 5 
+2.       24      7              1  0 5 
+3.          247                 1  0 5 
+4.          247     1 			   0 5
                 2477
                 2447
                 2247
-                1247				0 5 2 5 6
+                1247				0 5 
 
-5. 				1247		0 		  5 2 5 6
+5. 				1247		0 		  5 
                 
                 12477
                 12447
                 12247
                 11247
-                01247				  5 2 5 6
+                01247				  5 
 
-6. 				01247        5			2 5 6
+6. 				01247        5			
 				012477
 
-7.				012457		 2			  5 6
-				0124577
-				0124557
-				0124457
+					012457
 
-8.				0122457		 6			    6
-				01224577
-				01224567					8
-
-9. 				01224567     8
-				012245678
 
 """
 import time
+import random
 import functools
 
 def count_time(func):
@@ -95,9 +87,10 @@ def insertionSortIncreasing(a):
 
 
 if __name__ == '__main__':
-	a = [31,41,59,26,41,58]
+	print ('Sort a random list with 10000 element')
+	a = [random.randrange(1,100,1) for i in range(0,10000)]
 	res = insertionSort(a,'decrease')
-	print ('new sorted a ='+str(res))
+	# print ('new sorted a ='+str(res))
 
 
 

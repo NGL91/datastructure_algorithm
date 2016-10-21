@@ -14,7 +14,7 @@ Ex:     4 5 1 6 7 8 9 3 1
 
 """
 from insertion_sort import count_time
-
+import random
 
 @count_time
 def merge_sort(a, type='increasing'):
@@ -48,13 +48,11 @@ def merge(s1, s2):
 			c.append(s1[0])
 			del s1[0]
 
-	while s1:
-		c.append(s1[0])
-		del s1[0]
+	if s1:
+		c.extend(s1)
 
-	while s2:
-		c.append(s2[0])
-		del s2[0]
+	elif s2:
+		c.extend(s2)
 
 	return c
 
@@ -62,6 +60,7 @@ def merge(s1, s2):
 
 
 if __name__ == '__main__':
-	a = [31,41,59,26,41,58]
+	print ('Sort a random list with 10000 element')
+	a = [random.randrange(1,100,1) for i in range(0,10000)]
 	res = merge_sort(a)
-	print ('new sorted a ='+str(res))
+	# print ('new sorted a ='+str(res))
