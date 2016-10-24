@@ -88,7 +88,7 @@ def insertionSortIncreasing(a):
 
 if __name__ == '__main__':
 	print ('Sort a random list with 10000 element')
-	a = [random.randrange(1,100,1) for i in range(0,10000)]
+	a = [random.randrange(1,1000000,1) for i in range(0,10000)]
 	res = insertionSort(a,'decrease')
 	# print ('new sorted a ='+str(res))
 
