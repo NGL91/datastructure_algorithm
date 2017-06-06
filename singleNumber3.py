@@ -5,6 +5,7 @@
 #Given nums = [1, 2, 1, 3, 2, 5], return [3, 5].
 import operator
 
+# a& -a = 
 class Solution():
 	def singleNumber3(self, lists):
 		xor_a_b = reduce(operator.xor, lists)
