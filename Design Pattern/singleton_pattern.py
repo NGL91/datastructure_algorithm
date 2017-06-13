@@ -24,8 +24,6 @@ print 'x=',x
 y = OnlyOne('eggs')
 print 'y=',y
 
-z = OnlyOne('spam')
-print z
 
 print 'x=',x
 print 'y=',y
