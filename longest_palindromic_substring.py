@@ -36,5 +36,41 @@ class Solution(object):
         
         return res and res[1]
 
+
+    #O(n^2)
+    #Dinamic Programming
+    def longestPalindrome_DP(self, s):
+        maxlength=1
+        start = 0 
+        length = len(s)
+        low, high = 0,0
+
+        for i in xrange(1,length):
+            #Even palindrome
+            low = i -1
+            high = i
+            while low >=0 and high < length and s[low] == s[high]:
+                if high-low+1 > maxlength:
+                    start = low
+                    maxlength = high-low+1
+                low -=1
+                high +=1
+
+            #Odd palindrome
+            low = i-1
+            high = i+1
+            while low>= 0 and high < length and s[low] == s[high]:
+                if high-low+1 > maxlength:
+                    start = low
+                    maxlength = high-low+1
+                low -=1
+                high +=1
+
+        return s[start:start+maxlength]
+
+
+
 if __name__ == '__main__':
-	print Solution().longestPalindrome('babab')
+    print Solution().longestPalindrome('babab12')
+    print Solution().longestPalindrome_DP('babab12')
+    print Solution().longestPalindrome_DP('baab123')
