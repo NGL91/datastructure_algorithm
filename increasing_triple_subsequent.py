@@ -36,4 +36,4 @@ class Solution(object):
 
 
 if __name__ == '__main__':
-	print Solution().increasingTriplet([2,1,5,0,4,6])
+	print Solution().increasingTirplet([2,1,5,0,4,6])
